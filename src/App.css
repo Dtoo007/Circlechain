@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* NavBar */
+@layer components {
+  body {
+    @apply h-screen;
+    background: url('/backgroundImage.svg'), black;
+    background-repeat: none;
+    background-size: cover;
+  }
+
+
+  nav li {
+    @apply text-accent border-b-2 border-transparent hover:border-b-2 hover:border-secondary py-2 ;
+  }
+  
+  nav ul {
+    @apply flex flex-wrap space-x-8 pb-0;
+  }
+  nav, .social-icon {
+    @apply flex  gap-8;
+  }
+  nav {
+    @apply mx-auto fixed bg-black bg-opacity-20 backdrop-blur-lg shadow-lg;
+  }
+  nav, .nav {
+    @apply flex w-full px-10 items-center justify-between py-4;
+  }
+  
+  nav, .nav-links {
+    @apply flex items-center space-x-16;
+  }
+  nav, .links {
+    @apply flex items-center space-x-16;
+  }
+  nav, .social-link {
+    @apply cursor-pointer;
+  }
+}
+/* NavBar */
+
+/* Hero section */
+  header {
+    @apply mx-auto pt-64;
+  }
+  header, .hero-body {
+    @apply w-full px-10 flex flex-row items-center justify-between ;
+  }
+  header h1 {
+    @apply text-6xl font-bold w-2/3;
+  }
+  header p {
+    @apply text-2xl w-2/3;
+  }
+
+   h1, p {
+    @apply text-accent  
+  }
+  .hero-content {
+    @apply space-y-12 w-2/3;
+  }
+  .hero-text {
+    @apply space-y-4 ;
+  }
+
+  .primary-button {
+    @apply bg-secondary ;
+  }
+  .secondary-button {
+    @apply bg-accent;
+  }
+
+  button {
+    @apply  px-8 py-2 rounded-xl text-sm font-semibold;
+  }
+  .hero-button {
+    @apply flex space-x-12;
+  }
+/* Hero section */
+
+/* Section */
+  article {
+    @apply mx-auto mt-40 ;
+  }
+  .article-head {
+    @apply space-y-4
+  }
+  .article-head h2 {
+    @apply text-4xl text-accent text-center font-bold w-1/2 mx-auto;
+  }
+  .article-head p {
+    @apply text-2xl text-secondary text-center font-medium
+  }
+  .article-head span {
+    @apply  text-4xl text-light_green text-center font-bold 
+  }
+  .article-text h3 {
+    @apply text-2xl text-accent text-right font-bold;
+  }
+  .article-text p {
+    @apply text-sm text-primary text-right font-medium
+  }
+  .article-text {
+    @apply bg-gradient-to-r from-transparent to-secondary  mt-24 mb-24 p-4 rounded-xl w-full ;
+  }
+  .article-main {
+    @apply flex flex-row items-center justify-evenly pt-24 px-16; 
+  }
+  .article-image {
+    @apply    z-30	;
+  }
+  .article-body {
+    @apply   w-1/2	;
+  }
+
+
+
