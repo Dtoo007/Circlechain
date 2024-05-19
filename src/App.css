@@ -120,16 +120,16 @@
   /* Card */
 
   .card-container {
-    @apply flex flex-col w-full mx-auto mx-10;
+    @apply grid grid-cols-4 gap-y-8 gap-x-4 mx-auto mx-20;
   }
   .card-container h1{
     @apply text-4xl font-bold;
   }
   .card-direction {
-    @apply flex flex-wrap ;
+    @apply flex;
   }
   .card-body {
-    @apply p-4 bg-black mx-4 my-8 space-y-8 border-2 rounded-xl w-64  shadow-[0_0px_5px_5px_rgba(0,0,0,0.3)] shadow-secondary;
+    @apply p-4 bg-black space-y-4 border-2 rounded-xl w-full  shadow-[0_0px_5px_5px_rgba(0,0,0,0.3)] shadow-secondary;
   }
   .coin-name {
     @apply flex space-x-4;
@@ -147,7 +147,7 @@
     @apply flex flex-row items-center justify-between space-x-2;
   }
   .coin-name span p {
-    @apply flex flex-row bg-dark_arches p-1 rounded-sm text-xs font-semibold;
+    @apply flex flex-wrap flex-row bg-dark_arches p-1 rounded-sm text-xs font-semibold;
   }
   .price h1 {
     @apply text-xl font-medium;

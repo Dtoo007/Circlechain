@@ -1,4 +1,4 @@
-
+import React from 'react';
 import './App.css'
 import logo from './assets/logo.svg'
 import facebook from './assets/facebook.svg'
@@ -17,6 +17,7 @@ import tetherchart from './assets/tetherchart.svg'
 import bnbchart from './assets/tetherchart.svg'
 import btcchart from './assets/tetherchart.svg'
 import ethchart from './assets/tetherchart.svg'
+import { useState } from 'react';
 
 
 
@@ -43,7 +44,7 @@ const articles = [
   {head: 'Ownership Token control', body: 'Be in control and own as many asset as possible', id: 224},
 ]
 
-const cards = [
+const initialCards = [
   {coinIcon: btcicon, coinAbbr: 'BTC', coinName: 'BITCOIN', Price: '$56,623.54', pricePercent: '1.41%', chart: btcchart, arrow: arrow, id: 222},
   {coinIcon: ethicon, coinAbbr: 'ETH', coinName: 'ETHEREUM', Price: '$4,267.90', pricePercent: '2.22%', chart: ethchart, arrow: arrow, id: 252},
   {coinIcon: bnbicon, coinAbbr: 'BNB', coinName: 'BINANCE', Price: '$587.74', pricePercent: '0.82%', chart: bnbchart, arrow: arrow, id: 22},
@@ -51,6 +52,10 @@ const cards = [
 ]
 
 function App() {
+  const [cards] = useState(
+    Array.from({ length: 16 }, (_, i) => initialCards[i % initialCards.length])
+  );
+
   return (
     <div>
     <Nav navs={navs}/>
@@ -153,14 +158,10 @@ function Article ({articles}) {
 
 
 function Card({ cards }) {
-  const repeatedCards = Array.from({length: 4});
   return (
     <div className='card-container'>
-      <h1>Market Trend</h1>
-      {repeatedCards.map((_, index) =>(
-        <div key={index} className='card-direction'>
         {cards.map(card => (
-        <div key={`${index}-${card.id}`} className='card-body'>
+        <div key={card.id} className='card-body'>
           <div className='coin-detail'>
             <div className='coin-text'>
               <img src={card.coinIcon} alt={`${card.coinAbbr} icon`}/>
@@ -171,7 +172,6 @@ function Card({ cards }) {
               </div>
             <img src={arrow} alt="arrow icon"/>
           </div>
-
           <div className='price-body'>
             <div className='price'>
               <h1>{card.Price}</h1>
@@ -180,12 +180,40 @@ function Card({ cards }) {
             <img src={card.chart} alt={`${card.coinAbbr} chart`}/>
           </div>
         </div>
-      ))}
-        </div>
-      ))}
+           ))}
     </div>
   );
 }
+
+
+// function Card({ cards }) {
+
+//   return (
+//     <div className="card-container">
+//           {cards.map(card => (
+//             <div key={card.id} className="card-body">
+//               <div className="coin-detail">
+//                 <img src={card.coinIcon} alt={`${card.coinAbbr} icon`} className="coin-icon w-12 h-12" />
+//                 <div className='coin-text'>
+//                   <h1 className="coin-abbr">{card.coinAbbr}</h1>
+//                   <p className="coin-name">{card.coinName}</p>
+//                 </div>
+//                 <img src={arrow} alt="arrow icon" className="arrow-icon mt-4" />
+//               </div>
+//               <div className='price-body'>
+//               <div className="flex flex-col items-center mt-4">
+//                 <h1 className="coin-price">{card.Price}</h1>
+//                 <p className="price-percent">{card.pricePercent}</p>
+//               </div>
+//               <img src={card.chart} alt={`${card.coinAbbr} chart`} className="chart mt-4 w-full" />
+//               </div>
+//             </div>
+//           ))}
+//     </div>
+//   );
+// }
+
+
 
 
 
