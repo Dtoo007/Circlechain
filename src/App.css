@@ -8,7 +8,7 @@
   body {
     @apply h-screen;
     background: url('/backgroundImage.svg'), black;
-    background-repeat: none;
+    background-repeat: repeat;
     background-size: cover;
   }
 
@@ -116,5 +116,47 @@
     @apply   w-1/2	;
   }
 
+
+  /* Card */
+
+  .card-container {
+    @apply flex flex-col w-full mx-auto mx-10;
+  }
+  .card-container h1{
+    @apply text-4xl font-bold;
+  }
+  .card-direction {
+    @apply flex flex-wrap ;
+  }
+  .card-body {
+    @apply p-4 bg-black mx-4 my-8 space-y-8 border-2 rounded-xl w-64  shadow-[0_0px_5px_5px_rgba(0,0,0,0.3)] shadow-secondary;
+  }
+  .coin-name {
+    @apply flex space-x-4;
+  }
+  .price {
+    @apply flex flex-col space-y-2;
+  }
+  .price-body {
+    @apply flex flex-row items-center justify-between;
+  }
+  .coin-text {
+    @apply flex flex-row items-center justify-between space-x-2;
+  }
+  .coin-detail {
+    @apply flex flex-row items-center justify-between space-x-2;
+  }
+  .coin-name span p {
+    @apply flex flex-row bg-dark_arches p-1 rounded-sm text-xs font-semibold;
+  }
+  .price h1 {
+    @apply text-xl font-medium;
+  }
+  .coin-name h1 {
+    @apply text-sm font-semibold;
+  }
+  .price span p {
+    @apply  text-accent p-1 text-xs font-medium;
+  }
 
 

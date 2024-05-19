@@ -8,6 +8,15 @@ import discord from './assets/discord.svg'
 import telegram from './assets/telegram.svg'
 import desktopHeroImage from './assets/desktopHeroImage.svg'
 import sectionImage from './assets/sectionImage.svg'
+import btcicon from './assets/btcicon.svg'
+import ethicon from './assets/ethicon.svg'
+import bnbicon from './assets/bnbicon.svg'
+import tethericon from './assets/tethericon.svg'
+import arrow from './assets/arrow.svg'
+import tetherchart from './assets/tetherchart.svg'
+import bnbchart from './assets/tetherchart.svg'
+import btcchart from './assets/tetherchart.svg'
+import ethchart from './assets/tetherchart.svg'
 
 
 
@@ -34,12 +43,20 @@ const articles = [
   {head: 'Ownership Token control', body: 'Be in control and own as many asset as possible', id: 224},
 ]
 
+const cards = [
+  {coinIcon: btcicon, coinAbbr: 'BTC', coinName: 'BITCOIN', Price: '$56,623.54', pricePercent: '1.41%', chart: btcchart, arrow: arrow, id: 222},
+  {coinIcon: ethicon, coinAbbr: 'ETH', coinName: 'ETHEREUM', Price: '$4,267.90', pricePercent: '2.22%', chart: ethchart, arrow: arrow, id: 252},
+  {coinIcon: bnbicon, coinAbbr: 'BNB', coinName: 'BINANCE', Price: '$587.74', pricePercent: '0.82%', chart: bnbchart, arrow: arrow, id: 22},
+  {coinIcon: tethericon, coinAbbr: 'USDT', coinName: 'TETHER', Price: '$0.9998', pricePercent: '0.03%', chart: tetherchart, arrow: arrow, id: 22432},
+]
+
 function App() {
   return (
     <div>
     <Nav navs={navs}/>
     <Hero heroContent={heroContent}/>
     <Article articles={articles}/>
+    <Card cards={cards}/> 
     </div>
   )
 }
@@ -132,5 +149,44 @@ function Article ({articles}) {
     </article>
   )
 }
+
+
+
+function Card({ cards }) {
+  const repeatedCards = Array.from({length: 4});
+  return (
+    <div className='card-container'>
+      <h1>Market Trend</h1>
+      {repeatedCards.map((_, index) =>(
+        <div key={index} className='card-direction'>
+        {cards.map(card => (
+        <div key={`${index}-${card.id}`} className='card-body'>
+          <div className='coin-detail'>
+            <div className='coin-text'>
+              <img src={card.coinIcon} alt={`${card.coinAbbr} icon`}/>
+              <div className='coin-name'>
+                <h1 className="coin-abbr text-xl font-bold">{card.coinAbbr}</h1>
+                <span><p className="coin-name text-gray-600">{card.coinName}</p></span>
+              </div>
+              </div>
+            <img src={arrow} alt="arrow icon"/>
+          </div>
+
+          <div className='price-body'>
+            <div className='price'>
+              <h1>{card.Price}</h1>
+              <span><p>{card.pricePercent}</p></span>
+            </div>
+            <img src={card.chart} alt={`${card.coinAbbr} chart`}/>
+          </div>
+        </div>
+      ))}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+
 
 export default App
