@@ -9,7 +9,8 @@
     @apply h-screen;
     background: url('/backgroundImage.svg'), black;
     background-repeat: repeat;
-    background-size: cover;
+    background-size: 100%;
+    background-image: linear-gradient(to bottom, url('/backgroundImage.svg'));
   }
 
 
@@ -24,7 +25,7 @@
     @apply flex  gap-8;
   }
   nav {
-    @apply mx-auto fixed bg-black bg-opacity-20 backdrop-blur-lg shadow-lg;
+    @apply mx-auto fixed bg-black bg-opacity-20 backdrop-blur-lg shadow-lg z-40;
   }
   nav, .nav {
     @apply flex w-full px-10 items-center justify-between py-4;
@@ -68,6 +69,9 @@
 
   .primary-button {
     @apply bg-secondary ;
+  }
+  .primary-button:hover {
+    @apply bg-background;
   }
   .secondary-button {
     @apply bg-accent;
@@ -157,6 +161,58 @@
   }
   .price span p {
     @apply  text-accent p-1 text-xs font-medium;
+  }
+
+  /* Form */
+
+  form {
+    @apply flex flex-col items-center my-32;
+  }
+  .form-body {
+    @apply flex flex-col items-center bg-black bg-opacity-10 backdrop-blur-sm shadow-lg shadow-[0_0px_5px_5px_rgba(0,0,0,0.3)] shadow-dark_green rounded-lg mx-20 p-16;
+  }
+  form h2 {
+    @apply text-4xl text-accent text-center font-bold mx-auto;
+  }
+  .form {
+    @apply flex flex-row space-x-4 font-bold mx-auto p-8 mx-40 w-full;
+  }
+  .form-input {
+    @apply bg-accent outline-none rounded-md border-secondary border-2 py-1.5 px-1 text-sm font-medium w-full;
+  }
+
+  /* Footer */
+
+  footer {
+    @apply text-accent bg-black w-full     backdrop-blur-sm shadow-lg shadow-[0_0px_5px_5px_rgba(0,0,0,0.3)] shadow-dark_green
+  }
+  footer h2 {
+    @apply text-2xl text-accent font-bold;
+  }
+  footer li {
+    @apply text-accent text-left border-b-2 border-transparent hover:border-b-2 hover:border-secondary ;
+  }
+  
+  footer ul {
+    @apply flex flex-col text-left items-start;
+  }
+  .footer-body {
+    @apply flex flex-row items-start justify-between w-full p-24;
+  }
+  .footer-content {
+    @apply flex flex-col space-y-8 w-96;
+  }
+  .footer-content p {
+    @apply space-x-8 w-5/6 ;
+  }
+  .quick-link {
+    @apply space-y-8;
+  }
+  .footer-social {
+    @apply flex flex-col space-y-8;
+  }
+  .footer-social-body {
+    @apply flex flex-col items-start justify-between;
   }
 
 

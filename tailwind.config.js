@@ -20,6 +20,7 @@ module.exports = {
           dark_arches: 'rgba(55, 55, 66, 1)',
           light_green: '#CCFFE0',
           linear: '#C4C4C4',
+          dark_green: '#0F1E22',
         }
     },
   },

@@ -61,7 +61,9 @@ function App() {
     <Nav navs={navs}/>
     <Hero heroContent={heroContent}/>
     <Article articles={articles}/>
-    <Card cards={cards}/> 
+    <Card cards={cards}/>
+    <Form/> 
+    <Footer navs={navs}/>
     </div>
   )
 }
@@ -186,32 +188,60 @@ function Card({ cards }) {
 }
 
 
-// function Card({ cards }) {
+function Form () {
+  return(
+    <form>
+        <div className='form-body'>
+          <h2>Want to be aware of all update</h2>
+          <div className='form'>
+            <input type='email' className='form-input'></input>
+            <Button className='primary-button'>Subscribe</Button>
+          </div>
+        </div>
+    </form>
+  )
+}
 
-//   return (
-//     <div className="card-container">
-//           {cards.map(card => (
-//             <div key={card.id} className="card-body">
-//               <div className="coin-detail">
-//                 <img src={card.coinIcon} alt={`${card.coinAbbr} icon`} className="coin-icon w-12 h-12" />
-//                 <div className='coin-text'>
-//                   <h1 className="coin-abbr">{card.coinAbbr}</h1>
-//                   <p className="coin-name">{card.coinName}</p>
-//                 </div>
-//                 <img src={arrow} alt="arrow icon" className="arrow-icon mt-4" />
-//               </div>
-//               <div className='price-body'>
-//               <div className="flex flex-col items-center mt-4">
-//                 <h1 className="coin-price">{card.Price}</h1>
-//                 <p className="price-percent">{card.pricePercent}</p>
-//               </div>
-//               <img src={card.chart} alt={`${card.coinAbbr} chart`} className="chart mt-4 w-full" />
-//               </div>
-//             </div>
-//           ))}
-//     </div>
-//   );
-// }
+function Footer ({navs}) {
+  return(
+    <footer>
+      <div className='footer-body'>
+        <div className='footer-content'>
+        <div><img src={logo} alt='circlechain white logo'></img></div>
+        <p>Amet minim mollit non deserunt ullamco est aliqua dolor do amet sint. Velit officia consequatduis enim velit mollit. Exercitation veniamconsequat sunt nostrud amet.</p>
+        </div>
+      
+        <div className='quick-link'>
+          <h2>Quick Link</h2>
+            {navs.map(nav=>(
+              <ul key={nav.id}>
+                <li><a href='#how'>{nav.how}</a></li>
+                <li><a href='#blog'>{nav.blog}</a></li>
+                <li><a href='#how'>{nav.support}</a></li>
+              </ul>
+            ))}
+          </div>
+      
+        <>
+        <div className='footer-social-body'>
+          <div className='footer-social'>
+            <h2>Social Media</h2>
+            <div className='social-icon'>
+              <img src={facebook} alt='facebook logo' className='social-link'></img>
+              <img src={instagram} alt='instagram logo'></img>
+              <img src={linkedin} alt='linkedin logo'></img>
+              <img src={discord} alt='discord logo'></img>
+              <img src={telegram} alt='telegram logo'></img>
+            </div>
+          </div>
+          <div><p>&copy; 2022 Circlechain</p></div>
+        </div>
+        
+        </>
+      </div>
+    </footer>
+  )
+}
 
 
 
