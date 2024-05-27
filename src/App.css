@@ -12,6 +12,7 @@
     background-size: 100%;
     background-image: linear-gradient(to bottom, url('/backgroundImage.svg'));
   }
+}
 
 
   nav li {
@@ -19,112 +20,114 @@
   }
   
   nav ul {
-    @apply flex flex-wrap space-x-8 pb-0;
+    @apply flex flex-wrap space-x-8 pb-0 ;
   }
-  nav, .social-icon {
-    @apply flex  gap-8;
+   .social-icon {
+    @apply hidden md:flex md:flex-row  gap-4;
   }
   nav {
     @apply mx-auto fixed bg-black bg-opacity-20 backdrop-blur-lg shadow-lg z-40;
   }
   nav, .nav {
-    @apply flex w-full px-10 items-center justify-between py-4;
+    @apply flex w-full md:px-10 items-center justify-between py-4;
   }
   
   nav, .nav-links {
     @apply flex items-center space-x-16;
   }
-  nav, .links {
-    @apply flex items-center space-x-16;
+   .links {
+    @apply hidden md:flex items-center space-x-16;
   }
   nav, .social-link {
     @apply cursor-pointer;
   }
-}
+
 /* NavBar */
+
+
 
 /* Hero section */
   header {
-    @apply mx-auto pt-64;
+    @apply pt-40 text-center md:text-left;
   }
   header, .hero-body {
-    @apply w-full px-10 flex flex-row items-center justify-between ;
+    @apply flex w-full flex-col space-y-20 md:flex-row md:px-6 items-center md:space-y-0 justify-between;
   }
   header h1 {
-    @apply text-6xl font-bold w-2/3;
+    @apply  text-4xl md:text-6xl font-bold md:w-2/3;
   }
   header p {
-    @apply text-2xl w-2/3;
+    @apply text-2xl md:w-2/3;
   }
 
    h1, p {
     @apply text-accent  
   }
   .hero-content {
-    @apply space-y-12 w-2/3;
+    @apply flex flex-col items-center space-y-12 md:w-2/3 md:items-start;
   }
   .hero-text {
-    @apply space-y-4 ;
+    @apply space-y-4;
   }
 
   .primary-button {
-    @apply bg-secondary ;
+    @apply bg-secondary max-w-max md:w-1/2;
   }
   .primary-button:hover {
-    @apply bg-background;
+    @apply bg-background max-w-max md:w-1/2;
   }
   .secondary-button {
-    @apply bg-accent;
+    @apply bg-accent max-w-max md:w-1/2;
   }
 
   button {
-    @apply  px-8 py-2 rounded-xl text-sm font-semibold;
+    @apply  px-8 py-2 rounded-xl text-sm  font-semibold ;
   }
   .hero-button {
-    @apply flex space-x-12;
+    @apply flex flex-col items-center space-y-4 md:space-y-0 md:space-x-12 md:flex-row w-full;
   }
 /* Hero section */
 
 /* Section */
   article {
-    @apply mx-auto mt-40 ;
+    @apply mx-auto my-32  ;
   }
   .article-head {
     @apply space-y-4
   }
   .article-head h2 {
-    @apply text-4xl text-accent text-center font-bold w-1/2 mx-auto;
+    @apply md:text-4xl text-2xl text-accent text-center font-bold md:w-3/4 mx-auto;
   }
   .article-head p {
-    @apply text-2xl text-secondary text-center font-medium
+    @apply md:text-2xl text-sm text-secondary text-center font-medium
   }
   .article-head span {
-    @apply  text-4xl text-light_green text-center font-bold 
+    @apply  md:text-4xl text-2xl text-light_green text-center font-bold 
   }
   .article-text h3 {
-    @apply text-2xl text-accent text-right font-bold;
+    @apply md:text-2xl text-xl text-accent text-right font-bold;
   }
   .article-text p {
     @apply text-sm text-primary text-right font-medium
   }
   .article-text {
-    @apply bg-gradient-to-r from-transparent to-secondary  mt-24 mb-24 p-4 rounded-xl w-full ;
+    @apply bg-gradient-to-r from-transparent to-secondary mt-8  md:mt-24 md:mb-24 p-4 rounded-xl w-full ;
   }
   .article-main {
-    @apply flex flex-row items-center justify-evenly pt-24 px-16; 
+    @apply flex flex-col items-center justify-evenly pt-24 md:px-16 md:flex-row; 
   }
   .article-image {
     @apply    z-30	;
   }
   .article-body {
-    @apply   w-1/2	;
+    @apply   md:w-1/2	;
   }
 
 
   /* Card */
 
   .card-container {
-    @apply grid grid-cols-4 gap-y-8 gap-x-4 mx-auto mx-20;
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-8 gap-x-4 mx-auto md:mx-20;
   }
   .card-container h1{
     @apply text-4xl font-bold;
@@ -166,25 +169,31 @@
   /* Form */
 
   form {
-    @apply flex flex-col items-center my-32;
+    @apply flex mx-auto flex-col items-center my-32 m-8 w-full md:mx-auto;
   }
   .form-body {
-    @apply flex flex-col items-center bg-black bg-opacity-10 backdrop-blur-sm shadow-lg shadow-[0_0px_5px_5px_rgba(0,0,0,0.3)] shadow-dark_green rounded-lg mx-20 p-16;
+    @apply flex flex-col items-center bg-black bg-opacity-10 backdrop-blur-sm shadow-lg shadow-[0_0px_5px_5px_rgba(0,0,0,0.3)] shadow-dark_green rounded-lg p-4 md:mx-20 md:p-16;
   }
   form h2 {
-    @apply text-4xl text-accent text-center font-bold mx-auto;
+    @apply  text-2xl md:text-4xl text-accent text-center font-bold mx-auto md:w-full w-3/4;
   }
   .form {
-    @apply flex flex-row space-x-4 font-bold mx-auto p-8 mx-40 w-full;
+    @apply flex   font-bold mx-auto p-4 mx-20  w-full flex-col space-y-4 md:w-1/2 md:flex-row items-center md:space-x-4 md:p-8 md:mx-40;
   }
   .form-input {
-    @apply bg-accent outline-none rounded-md border-secondary border-2 py-1.5 px-1 text-sm font-medium w-full;
+    @apply bg-accent outline-none rounded-md border-secondary border-2 py-1.5 px-1 text-sm font-medium w-3/4;
+  }
+  form .primary-button {
+    @apply bg-secondary w-1/2;
+  }
+  form .primary-button:hover {
+    @apply bg-background w-1/2;
   }
 
   /* Footer */
 
   footer {
-    @apply text-accent bg-black w-full     backdrop-blur-sm shadow-lg shadow-[0_0px_5px_5px_rgba(0,0,0,0.3)] shadow-dark_green
+    @apply text-accent bg-black md:w-full  backdrop-blur-sm shadow-lg shadow-[0_0px_5px_5px_rgba(0,0,0,0.3)] shadow-dark_green;
   }
   footer h2 {
     @apply text-2xl text-accent font-bold;
@@ -194,25 +203,33 @@
   }
   
   footer ul {
-    @apply flex flex-col text-left items-start;
+    @apply flex flex-col text-left items-center md:items-start;
   }
   .footer-body {
-    @apply flex flex-row items-start justify-between w-full p-24;
+    @apply flex md:flex-row items-center space-y-8 md:space-y-0 md:items-start justify-between w-full  p-24 flex-col;
   }
   .footer-content {
-    @apply flex flex-col space-y-8 w-96;
+    @apply flex flex-col items-center md:items-start space-y-8 w-96;
   }
   .footer-content p {
-    @apply space-x-8 w-5/6 ;
+    @apply space-x-8 text-center w-5/6 md:text-left;
   }
   .quick-link {
     @apply space-y-8;
   }
   .footer-social {
-    @apply flex flex-col space-y-8;
+    @apply flex flex-col items-center md:items-start space-y-8;
+  }
+  .footer-social-icon {
+    @apply flex flex-row gap-2;
   }
   .footer-social-body {
-    @apply flex flex-col items-start justify-between;
+    @apply flex flex-col items-center md:items-start justify-between space-y-[52px];
   }
+  .container {
+    @apply mx-8;
+  }
+
+
 
 

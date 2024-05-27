@@ -5,13 +5,17 @@ module.exports = {
     "./src/main.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
-        screens: {
-          desktop: '1440px',
-          ipad: '720px',
-          mobile: '450px'
-        },
+    screens: {
+      'sm': '476px',
+      // => @media (min-width: 576px) { ... }
 
+      'md': '760px',
+      // => @media (min-width: 960px) { ... }
+
+      'lg': '1440px',
+      // => @media (min-width: 1440px) { ... }
+    },
+    extend: {
         colors: {
           primary: '#010010',
           accent: 'rgba(255, 255, 255, 1)',

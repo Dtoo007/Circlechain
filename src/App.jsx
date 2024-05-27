@@ -101,25 +101,27 @@ function Nav ({navs}) {
 
 function Hero ({heroContent}) {
   return (
-    <header>
-      <div className='hero-body'>
-        <div className='hero-content'>
-          {heroContent.map(heros=>(
-            <div key={heros.id} className='hero-text'>
-              <h1>{heros.head}</h1>
-              <p>{heros.body}</p>
+    <div className='container'>
+      <header>
+        <div className='hero-body'>
+          <div className='hero-content'>
+            {heroContent.map(heros=>(
+              <div key={heros.id} className='hero-text'>
+                <h1>{heros.head}</h1>
+                <p>{heros.body}</p>
+              </div>
+            ))}
+            <div className='hero-button'>
+              <Button className='primary-button'>Connect wallet</Button>
+              <Button className='secondary-button'>Start trading</Button>
             </div>
-          ))}
-          <div className='hero-button'>
-            <Button className='primary-button'>Connect wallet</Button>
-            <Button className='secondary-button'>Start trading</Button>
+          </div>
+          <div>
+          <img src={desktopHeroImage} alt='desktop view port hero section image'></img>
           </div>
         </div>
-        <div>
-        <img src={desktopHeroImage} alt='desktop view port hero section image'></img>
-        </div>
-      </div>
-    </header>
+      </header>
+    </div>
   )
 }
 
@@ -135,24 +137,24 @@ function Button ({children, className}) {
 
 function Article ({articles}) {
   return (
-    <article>
-      <>
-      <div className='article-head text-secondary text-4xl'>
-      <h2><span>Global </span>Decentralize currency based on blockchain technology</h2>
-      <p>Web3 is the latest efficient technology</p>
+    <article className='container'>
+      <div className='article-head'>
+        <h2><span>Global </span>Decentralize currency based on blockchain technology</h2>
+        <p>Web3 is the latest efficient technology</p>
       </div>
       <div className='article-main'>
-      <div className='article-image'><img src={sectionImage} alt='web3 image' ></img></div>
-      <div className='article-body'>
-      {articles.map(article=>(
-            <div key={article.id} className='article-text'>
+        <div className='article-image'>
+          <img src={sectionImage} alt='web3 image' ></img>
+          </div>
+        <div className='article-body'>
+          {articles.map(article=>(
+          <div key={article.id} className='article-text'>
               <h3>{article.head}</h3>
               <p>{article.body}</p>
-            </div>
-          ))}
+          </div>
+              ))}
+        </div>
       </div>
-      </div>
-      </>
     </article>
   )
 }
@@ -161,7 +163,8 @@ function Article ({articles}) {
 
 function Card({ cards }) {
   return (
-    <div className='card-container'>
+    <div className='container'>
+      <div className='card-container'>
         {cards.map(card => (
         <div key={card.id} className='card-body'>
           <div className='coin-detail'>
@@ -183,6 +186,7 @@ function Card({ cards }) {
           </div>
         </div>
            ))}
+      </div>
     </div>
   );
 }
@@ -190,15 +194,18 @@ function Card({ cards }) {
 
 function Form () {
   return(
-    <form>
+    <div className='container'>
+      <form>
         <div className='form-body'>
           <h2>Want to be aware of all update</h2>
           <div className='form'>
             <input type='email' className='form-input'></input>
-            <Button className='primary-button'>Subscribe</Button>
+            <button className='primary-button'>Subscribe</button>
           </div>
         </div>
-    </form>
+      </form>
+    </div>
+
   )
 }
 
@@ -207,8 +214,8 @@ function Footer ({navs}) {
     <footer>
       <div className='footer-body'>
         <div className='footer-content'>
-        <div><img src={logo} alt='circlechain white logo'></img></div>
-        <p>Amet minim mollit non deserunt ullamco est aliqua dolor do amet sint. Velit officia consequatduis enim velit mollit. Exercitation veniamconsequat sunt nostrud amet.</p>
+          <div><img src={logo} alt='circlechain white logo'></img></div>
+          <p>Amet minim mollit non deserunt ullamco est aliqua dolor do amet sint. Velit officia consequatduis enim velit mollit. Exercitation veniamconsequat sunt nostrud amet.</p>
         </div>
       
         <div className='quick-link'>
@@ -220,13 +227,12 @@ function Footer ({navs}) {
                 <li><a href='#how'>{nav.support}</a></li>
               </ul>
             ))}
-          </div>
-      
-        <>
+        </div>
+
         <div className='footer-social-body'>
           <div className='footer-social'>
             <h2>Social Media</h2>
-            <div className='social-icon'>
+            <div className='footer-social-icon'>
               <img src={facebook} alt='facebook logo' className='social-link'></img>
               <img src={instagram} alt='instagram logo'></img>
               <img src={linkedin} alt='linkedin logo'></img>
@@ -234,10 +240,10 @@ function Footer ({navs}) {
               <img src={telegram} alt='telegram logo'></img>
             </div>
           </div>
-          <div><p>&copy; 2022 Circlechain</p></div>
+          <div>
+            <p>&copy; 2022 Circlechain</p>
+          </div>
         </div>
-        
-        </>
       </div>
     </footer>
   )
