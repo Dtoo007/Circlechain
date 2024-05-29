@@ -32,7 +32,7 @@
     @apply mx-auto fixed bg-black bg-opacity-20 backdrop-blur-lg shadow-lg z-40;
   }
   nav, .nav {
-    @apply flex w-full md:px-10 items-center justify-between py-4;
+    @apply flex w-full px-2 md:px-10 items-center justify-between py-4;
   }
   
   nav, .nav-links {
