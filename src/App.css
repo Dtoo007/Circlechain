@@ -8,9 +8,12 @@
   body {
     @apply h-screen;
     background: url('/backgroundImage.svg'), black;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     background-size: 100%;
     background-image: linear-gradient(to bottom, url('/backgroundImage.svg'));
+    /* background-position: center; */
+    background-attachment: fixed;
+    height: 100vh;
   }
 }
 
